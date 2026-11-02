@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #05140d;
+    --color-surface: #0a2116;
+    --color-surface-card: #0f2c1e;
+    --color-emerald-primary: #10b981;
+    --color-leaf-green: #22c55e;
+    --color-harvest-gold: #f59e0b;
+    --color-soil-amber: #d97706;
+    --color-forest-deep: #064e3b;
+  }
+
+  body {
+    background-color: #04100a;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(34, 197, 94, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(245, 158, 11, 0.06) 0px, transparent 50%);
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04100a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #15803d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+/* Nature Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(10, 33, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(15, 44, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Gradient Text Presets */
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #84cc16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-nature {
+  background: linear-gradient(135deg, #a7f3d0 0%, #22c55e 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nature Badge Glow */
+.nature-badge {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+  text-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+/* Glowing Border Pulse Animation */
+@keyframes leafGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+}
+
+.animate-leaf-glow {
+  animation: leafGlow 4s infinite ease-in-out;
+}
